@@ -1,0 +1,1311 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry.json",
+  "name": "frieda",
+  "homepage": "https://github.com/mesbahismail/Frieda",
+  "items": [
+    {
+      "name": "theme",
+      "type": "registry:theme",
+      "title": "Frieda Theme",
+      "description": "Dark graphite theme with Frieda teal, chart palette, card and panel surfaces, chart animations and the chatcn color overrides.",
+      "dependencies": [
+        "tw-animate-css"
+      ],
+      "cssVars": {
+        "theme": {
+          "font-sans": "var(--font-poppins), ui-sans-serif, system-ui, sans-serif",
+          "color-surface": "var(--surface)",
+          "color-surface-2": "var(--surface-2)",
+          "color-surface-3": "var(--surface-3)",
+          "color-subtle": "var(--subtle)",
+          "color-faint": "var(--faint)",
+          "color-teal": "var(--teal)",
+          "color-teal-deep": "var(--teal-deep)",
+          "color-teal-soft": "var(--teal-soft)",
+          "color-mint": "var(--mint)",
+          "color-rose": "var(--rose)",
+          "color-pink": "var(--pink)",
+          "color-sun": "var(--sun)",
+          "color-lilac": "var(--lilac)",
+          "color-lavender": "var(--lavender)",
+          "color-violet": "var(--violet)",
+          "color-grape": "var(--grape)",
+          "animate-shimmer": "shimmer 1.6s linear infinite",
+          "animate-float-in": "float-in 0.35s cubic-bezier(0.22, 1, 0.36, 1) both"
+        },
+        "light": {
+          "radius": "1rem",
+          "background": "#2e2e2e",
+          "foreground": "#f4f4f4",
+          "card": "#1f1f1f",
+          "card-foreground": "#f4f4f4",
+          "popover": "#262626",
+          "popover-foreground": "#f4f4f4",
+          "primary": "#15e0cc",
+          "primary-foreground": "#0f1f1d",
+          "secondary": "#262626",
+          "secondary-foreground": "#f4f4f4",
+          "muted": "#262626",
+          "muted-foreground": "#9c9c9c",
+          "accent": "#333333",
+          "accent-foreground": "#f4f4f4",
+          "destructive": "#f7385a",
+          "border": "rgb(255 255 255 / 8%)",
+          "input": "#1b1b1b",
+          "ring": "#15e0cc",
+          "chart-1": "#15e0cc",
+          "chart-2": "#f7385a",
+          "chart-3": "#fdcc53",
+          "chart-4": "#a990ff",
+          "chart-5": "#63e9e0",
+          "sidebar": "#222222",
+          "sidebar-foreground": "#a3a3a3",
+          "sidebar-primary": "#15e0cc",
+          "sidebar-primary-foreground": "#0f1f1d",
+          "sidebar-accent": "#3a3a3a",
+          "sidebar-accent-foreground": "#f4f4f4",
+          "sidebar-border": "rgb(255 255 255 / 5%)",
+          "sidebar-ring": "#15e0cc",
+          "surface": "#1d1d1d",
+          "surface-2": "#262626",
+          "surface-3": "#313131",
+          "subtle": "#a3a3a3",
+          "faint": "#6e6e6e",
+          "teal": "#15e0cc",
+          "teal-deep": "#0a5f56",
+          "teal-soft": "#63e9e0",
+          "mint": "#b9f6ef",
+          "rose": "#f7385a",
+          "pink": "#ff6b81",
+          "sun": "#fdcc53",
+          "lilac": "#a990ff",
+          "lavender": "#d7cbff",
+          "violet": "#8a6cf5",
+          "grape": "#6a4bd6"
+        },
+        "dark": {
+          "radius": "1rem",
+          "background": "#2e2e2e",
+          "foreground": "#f4f4f4",
+          "card": "#1f1f1f",
+          "card-foreground": "#f4f4f4",
+          "popover": "#262626",
+          "popover-foreground": "#f4f4f4",
+          "primary": "#15e0cc",
+          "primary-foreground": "#0f1f1d",
+          "secondary": "#262626",
+          "secondary-foreground": "#f4f4f4",
+          "muted": "#262626",
+          "muted-foreground": "#9c9c9c",
+          "accent": "#333333",
+          "accent-foreground": "#f4f4f4",
+          "destructive": "#f7385a",
+          "border": "rgb(255 255 255 / 8%)",
+          "input": "#1b1b1b",
+          "ring": "#15e0cc",
+          "chart-1": "#15e0cc",
+          "chart-2": "#f7385a",
+          "chart-3": "#fdcc53",
+          "chart-4": "#a990ff",
+          "chart-5": "#63e9e0",
+          "sidebar": "#222222",
+          "sidebar-foreground": "#a3a3a3",
+          "sidebar-primary": "#15e0cc",
+          "sidebar-primary-foreground": "#0f1f1d",
+          "sidebar-accent": "#3a3a3a",
+          "sidebar-accent-foreground": "#f4f4f4",
+          "sidebar-border": "rgb(255 255 255 / 5%)",
+          "sidebar-ring": "#15e0cc",
+          "surface": "#1d1d1d",
+          "surface-2": "#262626",
+          "surface-3": "#313131",
+          "subtle": "#a3a3a3",
+          "faint": "#6e6e6e",
+          "teal": "#15e0cc",
+          "teal-deep": "#0a5f56",
+          "teal-soft": "#63e9e0",
+          "mint": "#b9f6ef",
+          "rose": "#f7385a",
+          "pink": "#ff6b81",
+          "sun": "#fdcc53",
+          "lilac": "#a990ff",
+          "lavender": "#d7cbff",
+          "violet": "#8a6cf5",
+          "grape": "#6a4bd6"
+        }
+      },
+      "css": {
+        "@keyframes shimmer": {
+          "from": {
+            "background-position": "200% 0"
+          },
+          "to": {
+            "background-position": "-200% 0"
+          }
+        },
+        "@keyframes float-in": {
+          "from": {
+            "opacity": "0",
+            "transform": "translateY(8px)"
+          },
+          "to": {
+            "opacity": "1",
+            "transform": "none"
+          }
+        },
+        "@layer base": {
+          ":root": {
+            "color-scheme": "dark"
+          },
+          "body": {
+            "@apply bg-background text-foreground": {},
+            "background-image": "linear-gradient(160deg, #2b2b2b 0%, #2e2e2e 45%, #353535 100%)",
+            "background-attachment": "fixed",
+            "font-feature-settings": "\"tnum\" 0"
+          },
+          "button:not(:disabled),\n  [role=\"button\"]:not(:disabled)": {
+            "cursor": "pointer"
+          },
+          "::selection": {
+            "background": "rgb(21 224 204 / 35%)"
+          }
+        },
+        "@layer components": {
+          ".frieda-card": {
+            "position": "relative",
+            "border-radius": "18px",
+            "border": "1px solid rgb(255 255 255 / 5%)",
+            "background": "linear-gradient(180deg, #1c1c1c 0%, #212121 60%, #242424 100%)",
+            "box-shadow": "0 18px 40px -24px rgb(0 0 0 / 60%)"
+          },
+          ".frieda-tile": {
+            "border-radius": "14px",
+            "background": "linear-gradient(180deg, #262626 0%, #2a2a2a 100%)"
+          },
+          ".frieda-panel": {
+            "background": "radial-gradient(70% 45% at 85% 70%, rgb(21 224 204 / 9%) 0%, transparent 70%),\n      radial-gradient(60% 40% at 15% 20%, rgb(255 255 255 / 3%) 0%, transparent 70%),\n      linear-gradient(180deg, #2c2f2f 0%, #2b2d2d 100%)"
+          },
+          ".frieda-scroll": {
+            "scrollbar-width": "thin",
+            "scrollbar-color": "rgb(255 255 255 / 12%) transparent"
+          },
+          ".frieda-scroll::-webkit-scrollbar": {
+            "width": "6px",
+            "height": "6px"
+          },
+          ".frieda-scroll::-webkit-scrollbar-thumb": {
+            "border-radius": "999px",
+            "background": "rgb(255 255 255 / 12%)"
+          },
+          ".frieda-no-scrollbar": {
+            "scrollbar-width": "none"
+          },
+          ".frieda-no-scrollbar::-webkit-scrollbar": {
+            "display": "none"
+          },
+          ".frieda-grow": {
+            "transform-origin": "bottom",
+            "animation": "frieda-grow 0.8s cubic-bezier(0.22, 1, 0.36, 1) both"
+          },
+          ".frieda-grow-x": {
+            "transform-origin": "left",
+            "animation": "frieda-grow-x 0.9s cubic-bezier(0.22, 1, 0.36, 1) both"
+          },
+          ".frieda-ring": {
+            "animation": "frieda-ring 1s cubic-bezier(0.22, 1, 0.36, 1) both"
+          },
+          ".frieda-draw": {
+            "stroke-dasharray": "1200",
+            "animation": "frieda-draw 1.4s ease-out both"
+          }
+        },
+        "@keyframes frieda-grow": {
+          "from": {
+            "transform": "scaleY(0)"
+          }
+        },
+        "@keyframes frieda-grow-x": {
+          "from": {
+            "transform": "scaleX(0)"
+          }
+        },
+        "@keyframes frieda-ring": {
+          "from": {
+            "stroke-dashoffset": "var(--len)"
+          }
+        },
+        "@keyframes frieda-draw": {
+          "from": {
+            "stroke-dashoffset": "1200"
+          },
+          "to": {
+            "stroke-dashoffset": "0"
+          }
+        },
+        "@media (prefers-reduced-motion: reduce)": {
+          ".frieda-grow,\n  .frieda-grow-x,\n  .frieda-ring,\n  .frieda-draw": {
+            "animation": "none"
+          }
+        },
+        ".frieda-chat[data-chat-theme]": {
+          "--chat-font-sans": "var(--font-poppins), ui-sans-serif, system-ui, sans-serif",
+          "--chat-bg-app": "transparent",
+          "--chat-bg-sidebar": "#1b1b1b",
+          "--chat-bg-main": "#262626",
+          "--chat-bg-header": "transparent",
+          "--chat-bg-composer": "transparent",
+          "--chat-bg-content-card": "#2b2b2b",
+          "--chat-bg-code": "#181818",
+          "--chat-bubble-outgoing": "#15e0cc",
+          "--chat-bubble-outgoing-text": "#102422",
+          "--chat-bubble-incoming": "#1f1f1f",
+          "--chat-bubble-incoming-text": "#f1f1f1",
+          "--chat-accent": "#15e0cc",
+          "--chat-accent-soft": "rgb(21 224 204 / 10%)",
+          "--chat-green": "#15e0cc",
+          "--chat-orange": "#fdcc53",
+          "--chat-red": "#f7385a",
+          "--chat-text-primary": "#f4f4f4",
+          "--chat-text-secondary": "#a3a3a3",
+          "--chat-text-tertiary": "#6e6e6e",
+          "--chat-border": "rgb(255 255 255 / 6%)",
+          "--chat-border-strong": "rgb(255 255 255 / 10%)",
+          "--chat-shadow-md": "0 8px 24px rgb(0 0 0 / 35%)",
+          "--chat-shadow-toolbar": "0 0 0 1px rgb(255 255 255 / 8%)",
+          "--chat-bubble-radius": "20px",
+          "--chat-spacing-messages": "18px",
+          "font-family": "var(--chat-font-sans)"
+        },
+        ".frieda-chat .chat-bubble p": {
+          "font-size": "15px",
+          "line-height": "1.6"
+        },
+        ".frieda-chat .chat-bubble": {
+          "padding": "12px 20px",
+          "border": "1px solid rgb(255 255 255 / 4%)"
+        },
+        ".frieda-chat .chat-composer > div": {
+          "border-top": "0"
+        },
+        ".frieda-chat .chat-composer button[aria-label=\"Send message\"]:not(:disabled)": {
+          "color": "#0f1f1d"
+        }
+      }
+    },
+    {
+      "name": "font-poppins",
+      "type": "registry:font",
+      "title": "Poppins",
+      "description": "Poppins, the typeface used across Frieda.",
+      "font": {
+        "family": "'Poppins', sans-serif",
+        "provider": "google",
+        "import": "Poppins",
+        "variable": "--font-poppins",
+        "weight": [
+          "300",
+          "400",
+          "500",
+          "600"
+        ],
+        "subsets": [
+          "latin"
+        ],
+        "dependency": "@fontsource/poppins"
+      }
+    },
+    {
+      "name": "chat",
+      "type": "registry:ui",
+      "title": "chatcn",
+      "description": "chatcn chat components (MIT, github.com/leonickson1/chatcn) with its themes as a CSS record, so it installs with the current shadcn CLI.",
+      "dependencies": [
+        "date-fns",
+        "lucide-react"
+      ],
+      "registryDependencies": [
+        "utils"
+      ],
+      "files": [
+        {
+          "path": "src/components/ui/chat/chat.tsx",
+          "type": "registry:ui",
+          "target": "components/ui/chat/chat.tsx"
+        },
+        {
+          "path": "src/components/ui/chat/features.tsx",
+          "type": "registry:ui",
+          "target": "components/ui/chat/features.tsx"
+        },
+        {
+          "path": "src/components/ui/chat/layouts.tsx",
+          "type": "registry:ui",
+          "target": "components/ui/chat/layouts.tsx"
+        },
+        {
+          "path": "src/components/ui/chat/hooks.ts",
+          "type": "registry:ui",
+          "target": "components/ui/chat/hooks.ts"
+        },
+        {
+          "path": "src/components/ui/chat/security.ts",
+          "type": "registry:ui",
+          "target": "components/ui/chat/security.ts"
+        },
+        {
+          "path": "src/components/ui/chat/types.ts",
+          "type": "registry:ui",
+          "target": "components/ui/chat/types.ts"
+        },
+        {
+          "path": "src/components/ui/chat/index.ts",
+          "type": "registry:ui",
+          "target": "components/ui/chat/index.ts"
+        },
+        {
+          "path": "src/components/ui/chat/LICENSE",
+          "type": "registry:file",
+          "target": "components/ui/chat/LICENSE"
+        }
+      ],
+      "css": {
+        ":root": {
+          "--chat-font-sans": "system-ui, -apple-system, BlinkMacSystemFont,\n                    \"Segoe UI\", Roboto, \"Helvetica Neue\", sans-serif",
+          "--chat-font-mono": "\"SF Mono\", \"JetBrains Mono\", \"Fira Code\",\n                    ui-monospace, monospace"
+        },
+        "[data-chat-theme=\"lunar\"]": {
+          "--chat-bg-app": "#FAFAFA",
+          "--chat-bg-sidebar": "#F4F4F5",
+          "--chat-bg-main": "#FFFFFF",
+          "--chat-bg-header": "rgba(255, 255, 255, 0.75)",
+          "--chat-bg-composer": "rgba(255, 255, 255, 0.82)",
+          "--chat-bubble-outgoing": "#6366F1",
+          "--chat-bubble-outgoing-text": "#FFFFFF",
+          "--chat-bubble-incoming": "#F4F4F5",
+          "--chat-bubble-incoming-text": "#18181B",
+          "--chat-accent": "#6366F1",
+          "--chat-accent-soft": "rgba(99, 102, 241, 0.08)",
+          "--chat-green": "#22C55E",
+          "--chat-orange": "#F59E0B",
+          "--chat-red": "#EF4444",
+          "--chat-text-primary": "#18181B",
+          "--chat-text-secondary": "#71717A",
+          "--chat-text-tertiary": "#A1A1AA",
+          "--chat-border": "rgba(0, 0, 0, 0.06)",
+          "--chat-border-strong": "rgba(0, 0, 0, 0.10)",
+          "--chat-shadow-sm": "0 1px 2px rgba(0, 0, 0, 0.04)",
+          "--chat-shadow-md": "0 4px 12px rgba(0, 0, 0, 0.06)",
+          "--chat-shadow-lg": "0 8px 30px rgba(0, 0, 0, 0.08)",
+          "--chat-shadow-toolbar": "0 2px 16px rgba(0, 0, 0, 0.12)",
+          "--chat-bubble-radius": "14px",
+          "--chat-bubble-radius-grouped": "4px",
+          "--chat-input-radius": "20px",
+          "--chat-spacing-messages": "14px",
+          "--chat-spacing-grouped": "2px",
+          "--chat-ease": "cubic-bezier(0.25, 0.1, 0.25, 1.0)",
+          "--chat-duration-fast": "150ms",
+          "--chat-duration-normal": "250ms",
+          "--chat-bg-content-card": "#F4F4F5",
+          "--chat-bg-code": "#F4F4F5"
+        },
+        ".dark [data-chat-theme=\"lunar\"],\n[data-chat-theme=\"lunar\"].dark": {
+          "--chat-bg-app": "#09090B",
+          "--chat-bg-sidebar": "#18181B",
+          "--chat-bg-main": "#09090B",
+          "--chat-bg-header": "rgba(24, 24, 27, 0.75)",
+          "--chat-bg-composer": "rgba(24, 24, 27, 0.82)",
+          "--chat-bubble-outgoing": "#818CF8",
+          "--chat-bubble-outgoing-text": "#FFFFFF",
+          "--chat-bubble-incoming": "#27272A",
+          "--chat-bubble-incoming-text": "#FAFAFA",
+          "--chat-accent": "#818CF8",
+          "--chat-accent-soft": "rgba(129, 140, 248, 0.10)",
+          "--chat-green": "#4ADE80",
+          "--chat-orange": "#FBBF24",
+          "--chat-red": "#F87171",
+          "--chat-text-primary": "#FAFAFA",
+          "--chat-text-secondary": "#A1A1AA",
+          "--chat-text-tertiary": "#52525B",
+          "--chat-border": "rgba(255, 255, 255, 0.06)",
+          "--chat-border-strong": "rgba(255, 255, 255, 0.10)",
+          "--chat-shadow-sm": "0 1px 3px rgba(0, 0, 0, 0.20)",
+          "--chat-shadow-md": "0 4px 16px rgba(0, 0, 0, 0.30)",
+          "--chat-shadow-lg": "0 8px 40px rgba(0, 0, 0, 0.40)",
+          "--chat-shadow-toolbar": "0 2px 20px rgba(0, 0, 0, 0.40)",
+          "--chat-bg-content-card": "#18181B",
+          "--chat-bg-code": "#18181B"
+        },
+        "[data-chat-theme=\"aurora\"]": {
+          "--chat-bg-app": "#FFFBF5",
+          "--chat-bg-sidebar": "#FFF8F0",
+          "--chat-bg-main": "#FFFBF5",
+          "--chat-bg-header": "rgba(255, 251, 245, 0.80)",
+          "--chat-bg-composer": "rgba(255, 251, 245, 0.85)",
+          "--chat-bubble-outgoing": "rgba(13, 148, 136, 0.10)",
+          "--chat-bubble-outgoing-text": "#1C1917",
+          "--chat-bubble-incoming": "rgba(0, 0, 0, 0.05)",
+          "--chat-bubble-incoming-text": "#1C1917",
+          "--chat-accent": "#0D9488",
+          "--chat-accent-soft": "rgba(13, 148, 136, 0.06)",
+          "--chat-green": "#16A34A",
+          "--chat-orange": "#EA580C",
+          "--chat-red": "#DC2626",
+          "--chat-text-primary": "#1C1917",
+          "--chat-text-secondary": "#78716C",
+          "--chat-text-tertiary": "#A8A29E",
+          "--chat-border": "rgba(120, 113, 108, 0.10)",
+          "--chat-border-strong": "rgba(120, 113, 108, 0.18)",
+          "--chat-shadow-sm": "0 1px 2px rgba(120, 113, 108, 0.06)",
+          "--chat-shadow-md": "0 4px 20px rgba(120, 113, 108, 0.08)",
+          "--chat-shadow-lg": "0 12px 40px rgba(120, 113, 108, 0.08)",
+          "--chat-shadow-toolbar": "0 4px 20px rgba(120, 113, 108, 0.10)",
+          "--chat-bubble-radius": "18px",
+          "--chat-bubble-radius-grouped": "6px",
+          "--chat-input-radius": "24px",
+          "--chat-spacing-messages": "16px",
+          "--chat-spacing-grouped": "3px",
+          "--chat-ease": "cubic-bezier(0.34, 1.56, 0.64, 1)",
+          "--chat-duration-fast": "180ms",
+          "--chat-duration-normal": "280ms",
+          "--chat-bg-content-card": "#FFFFFF",
+          "--chat-bg-code": "#F5F0EB"
+        },
+        ".dark [data-chat-theme=\"aurora\"],\n[data-chat-theme=\"aurora\"].dark": {
+          "--chat-bg-app": "#0C0A09",
+          "--chat-bg-sidebar": "#1C1917",
+          "--chat-bg-main": "#0C0A09",
+          "--chat-bg-header": "rgba(28, 25, 23, 0.78)",
+          "--chat-bg-composer": "rgba(28, 25, 23, 0.85)",
+          "--chat-bubble-outgoing": "rgba(45, 212, 191, 0.08)",
+          "--chat-bubble-outgoing-text": "#FAFAF9",
+          "--chat-bubble-incoming": "rgba(255, 255, 255, 0.04)",
+          "--chat-bubble-incoming-text": "#FAFAF9",
+          "--chat-accent": "#2DD4BF",
+          "--chat-accent-soft": "rgba(45, 212, 191, 0.08)",
+          "--chat-text-primary": "#FAFAF9",
+          "--chat-text-secondary": "#A8A29E",
+          "--chat-text-tertiary": "#57534E",
+          "--chat-border": "rgba(255, 255, 255, 0.06)",
+          "--chat-border-strong": "rgba(255, 255, 255, 0.10)",
+          "--chat-shadow-sm": "0 1px 3px rgba(0, 0, 0, 0.20)",
+          "--chat-shadow-md": "0 4px 16px rgba(0, 0, 0, 0.25)",
+          "--chat-shadow-lg": "0 8px 40px rgba(0, 0, 0, 0.35)",
+          "--chat-shadow-toolbar": "0 2px 20px rgba(0, 0, 0, 0.35)",
+          "--chat-bg-content-card": "#1C1917",
+          "--chat-bg-code": "#1C1917"
+        },
+        "[data-chat-theme=\"aurora\"] .chat-bubble": {
+          "outline": "1.5px solid rgba(13, 148, 136, 0.25)",
+          "outline-offset": "-1.5px"
+        },
+        ".dark [data-chat-theme=\"aurora\"] .chat-bubble,\n[data-chat-theme=\"aurora\"].dark .chat-bubble": {
+          "outline": "1.5px solid rgba(45, 212, 191, 0.20)",
+          "outline-offset": "-1.5px"
+        },
+        "[data-chat-theme=\"ember\"]": {
+          "--chat-bg-app": "#FFFFFF",
+          "--chat-bg-sidebar": "#F8FAFC",
+          "--chat-bg-main": "#FFFFFF",
+          "--chat-bg-header": "#FFFFFF",
+          "--chat-bg-composer": "#FFFFFF",
+          "--chat-bubble-outgoing": "rgba(249, 115, 22, 0.04)",
+          "--chat-bubble-outgoing-text": "#0F172A",
+          "--chat-bubble-incoming": "rgba(0, 0, 0, 0.02)",
+          "--chat-bubble-incoming-text": "#0F172A",
+          "--chat-accent": "#F97316",
+          "--chat-accent-soft": "rgba(249, 115, 22, 0.06)",
+          "--chat-green": "#22C55E",
+          "--chat-orange": "#F97316",
+          "--chat-red": "#EF4444",
+          "--chat-text-primary": "#0F172A",
+          "--chat-text-secondary": "#64748B",
+          "--chat-text-tertiary": "#94A3B8",
+          "--chat-border": "#E2E8F0",
+          "--chat-border-strong": "#CBD5E1",
+          "--chat-shadow-sm": "none",
+          "--chat-shadow-md": "none",
+          "--chat-shadow-lg": "none",
+          "--chat-shadow-toolbar": "none",
+          "--chat-bubble-radius": "0px",
+          "--chat-bubble-radius-grouped": "0px",
+          "--chat-input-radius": "8px",
+          "--chat-spacing-messages": "8px",
+          "--chat-spacing-grouped": "0px",
+          "--chat-ease": "cubic-bezier(0.16, 1, 0.3, 1)",
+          "--chat-duration-fast": "100ms",
+          "--chat-duration-normal": "150ms",
+          "--chat-bg-content-card": "#F8FAFC",
+          "--chat-bg-code": "#F1F5F9"
+        },
+        ".dark [data-chat-theme=\"ember\"],\n[data-chat-theme=\"ember\"].dark": {
+          "--chat-bg-app": "#0B0F19",
+          "--chat-bg-sidebar": "#111827",
+          "--chat-bg-main": "#0B0F19",
+          "--chat-bg-header": "#111827",
+          "--chat-bg-composer": "#111827",
+          "--chat-bubble-outgoing": "rgba(251, 146, 60, 0.06)",
+          "--chat-bubble-outgoing-text": "#F8FAFC",
+          "--chat-bubble-incoming": "rgba(255, 255, 255, 0.03)",
+          "--chat-bubble-incoming-text": "#F8FAFC",
+          "--chat-accent": "#FB923C",
+          "--chat-accent-soft": "rgba(251, 146, 60, 0.08)",
+          "--chat-text-primary": "#F8FAFC",
+          "--chat-text-secondary": "#94A3B8",
+          "--chat-text-tertiary": "#475569",
+          "--chat-border": "rgba(255, 255, 255, 0.08)",
+          "--chat-border-strong": "rgba(255, 255, 255, 0.12)",
+          "--chat-bg-content-card": "#111827",
+          "--chat-bg-code": "#0F172A"
+        },
+        "[data-chat-theme=\"ember\"] .chat-bubble": {
+          "border-radius": "0",
+          "border-left": "3px solid var(--chat-accent)",
+          "padding": "6px 16px 6px 12px"
+        },
+        "[data-chat-theme=\"ember\"] .chat-message:hover": {
+          "background": "var(--chat-accent-soft)",
+          "border-radius": "4px"
+        },
+        "[data-chat-theme=\"ember\"] .chat-composer": {
+          "backdrop-filter": "none",
+          "-webkit-backdrop-filter": "none"
+        },
+        "[data-chat-theme=\"midnight\"]": {
+          "--chat-bg-app": "#000000",
+          "--chat-bg-sidebar": "#0A0A0A",
+          "--chat-bg-main": "#000000",
+          "--chat-bg-header": "rgba(10, 10, 10, 0.80)",
+          "--chat-bg-composer": "rgba(10, 10, 10, 0.85)",
+          "--chat-bubble-outgoing": "rgba(59, 130, 246, 0.20)",
+          "--chat-bubble-outgoing-text": "#FFFFFF",
+          "--chat-bubble-incoming": "rgba(255, 255, 255, 0.06)",
+          "--chat-bubble-incoming-text": "#E5E5E5",
+          "--chat-accent": "#3B82F6",
+          "--chat-accent-soft": "rgba(59, 130, 246, 0.10)",
+          "--chat-green": "#22C55E",
+          "--chat-orange": "#F59E0B",
+          "--chat-red": "#EF4444",
+          "--chat-text-primary": "#FFFFFF",
+          "--chat-text-secondary": "#737373",
+          "--chat-text-tertiary": "#404040",
+          "--chat-border": "rgba(255, 255, 255, 0.04)",
+          "--chat-border-strong": "rgba(255, 255, 255, 0.08)",
+          "--chat-bg-content-card": "#111111",
+          "--chat-bg-code": "#111111",
+          "--chat-shadow-sm": "none",
+          "--chat-shadow-md": "none",
+          "--chat-shadow-lg": "none",
+          "--chat-shadow-toolbar": "0 0 0 1px rgba(255, 255, 255, 0.08)",
+          "--chat-bubble-radius": "16px",
+          "--chat-bubble-radius-grouped": "4px",
+          "--chat-input-radius": "20px",
+          "--chat-spacing-messages": "16px",
+          "--chat-spacing-grouped": "2px",
+          "--chat-ease": "cubic-bezier(0.25, 0.1, 0.25, 1.0)",
+          "--chat-duration-fast": "150ms",
+          "--chat-duration-normal": "250ms"
+        },
+        "[data-chat-theme=\"midnight\"] .chat-reaction-pop:hover": {
+          "box-shadow": "0 0 8px rgba(59, 130, 246, 0.15)"
+        },
+        "[data-chat-theme=\"aurora\"] .chat-content-card": {
+          "box-shadow": "0 1px 4px rgba(0, 0, 0, 0.06)"
+        },
+        "@layer base": {
+          ".chat-content-card": {
+            "background": "var(--chat-bg-content-card)",
+            "border": "1px solid var(--chat-border-strong)",
+            "border-radius": "12px",
+            "overflow": "hidden"
+          },
+          ".chat-drop-overlay": {
+            "position": "absolute",
+            "inset": "0",
+            "z-index": "50",
+            "display": "flex",
+            "align-items": "center",
+            "justify-content": "center",
+            "background": "var(--chat-accent-soft)",
+            "border": "2px dashed var(--chat-accent)",
+            "border-radius": "12px",
+            "backdrop-filter": "blur(4px)"
+          }
+        },
+        "[data-chat-theme=\"ember\"] .chat-drop-overlay": {
+          "border-radius": "4px"
+        },
+        ".chat-typing-dot": {
+          "animation": "chat-typing 1.2s ease-in-out infinite"
+        },
+        ".chat-toolbar-enter": {
+          "animation": "chat-toolbar-in 0.18s ease-out both"
+        },
+        "@keyframes chat-toolbar-in": {
+          "from": {
+            "transform": "translateY(4px) scale(0.98)"
+          },
+          "to": {
+            "transform": "none"
+          }
+        },
+        "@keyframes chat-typing": {
+          "0%,\n  60%,\n  100%": {
+            "opacity": "0.35",
+            "transform": "translateY(0)"
+          },
+          "30%": {
+            "opacity": "1",
+            "transform": "translateY(-3px)"
+          }
+        },
+        "@media (prefers-reduced-motion: reduce)": {
+          ".chat-typing-dot,\n  .chat-toolbar-enter": {
+            "animation": "none"
+          }
+        }
+      }
+    },
+    {
+      "name": "avatars",
+      "type": "registry:file",
+      "title": "Frieda avatars",
+      "description": "31 illustrated avatars (DiceBear Avataaars by Pablo Stanley, free for personal and commercial use).",
+      "files": [
+        {
+          "path": "public/frieda/avatars/ahmed-halici.svg",
+          "type": "registry:file",
+          "target": "~/public/frieda/avatars/ahmed-halici.svg"
+        },
+        {
+          "path": "public/frieda/avatars/ann-matic.svg",
+          "type": "registry:file",
+          "target": "~/public/frieda/avatars/ann-matic.svg"
+        },
+        {
+          "path": "public/frieda/avatars/arnold-barzan.svg",
+          "type": "registry:file",
+          "target": "~/public/frieda/avatars/arnold-barzan.svg"
+        },
+        {
+          "path": "public/frieda/avatars/bella-samaan.svg",
+          "type": "registry:file",
+          "target": "~/public/frieda/avatars/bella-samaan.svg"
+        },
+        {
+          "path": "public/frieda/avatars/brandon-philips.svg",
+          "type": "registry:file",
+          "target": "~/public/frieda/avatars/brandon-philips.svg"
+        },
+        {
+          "path": "public/frieda/avatars/carlos.svg",
+          "type": "registry:file",
+          "target": "~/public/frieda/avatars/carlos.svg"
+        },
+        {
+          "path": "public/frieda/avatars/chad-asmeer.svg",
+          "type": "registry:file",
+          "target": "~/public/frieda/avatars/chad-asmeer.svg"
+        },
+        {
+          "path": "public/frieda/avatars/chaimae-mahfoud.svg",
+          "type": "registry:file",
+          "target": "~/public/frieda/avatars/chaimae-mahfoud.svg"
+        },
+        {
+          "path": "public/frieda/avatars/chris-bumford.svg",
+          "type": "registry:file",
+          "target": "~/public/frieda/avatars/chris-bumford.svg"
+        },
+        {
+          "path": "public/frieda/avatars/dana.svg",
+          "type": "registry:file",
+          "target": "~/public/frieda/avatars/dana.svg"
+        },
+        {
+          "path": "public/frieda/avatars/danny.svg",
+          "type": "registry:file",
+          "target": "~/public/frieda/avatars/danny.svg"
+        },
+        {
+          "path": "public/frieda/avatars/david-osei.svg",
+          "type": "registry:file",
+          "target": "~/public/frieda/avatars/david-osei.svg"
+        },
+        {
+          "path": "public/frieda/avatars/diana-ruiz.svg",
+          "type": "registry:file",
+          "target": "~/public/frieda/avatars/diana-ruiz.svg"
+        },
+        {
+          "path": "public/frieda/avatars/elias-karam.svg",
+          "type": "registry:file",
+          "target": "~/public/frieda/avatars/elias-karam.svg"
+        },
+        {
+          "path": "public/frieda/avatars/eva-lindt.svg",
+          "type": "registry:file",
+          "target": "~/public/frieda/avatars/eva-lindt.svg"
+        },
+        {
+          "path": "public/frieda/avatars/farah-nasser.svg",
+          "type": "registry:file",
+          "target": "~/public/frieda/avatars/farah-nasser.svg"
+        },
+        {
+          "path": "public/frieda/avatars/felix-wong.svg",
+          "type": "registry:file",
+          "target": "~/public/frieda/avatars/felix-wong.svg"
+        },
+        {
+          "path": "public/frieda/avatars/frieda.svg",
+          "type": "registry:file",
+          "target": "~/public/frieda/avatars/frieda.svg"
+        },
+        {
+          "path": "public/frieda/avatars/hafsa.svg",
+          "type": "registry:file",
+          "target": "~/public/frieda/avatars/hafsa.svg"
+        },
+        {
+          "path": "public/frieda/avatars/hana-sato.svg",
+          "type": "registry:file",
+          "target": "~/public/frieda/avatars/hana-sato.svg"
+        },
+        {
+          "path": "public/frieda/avatars/imane.svg",
+          "type": "registry:file",
+          "target": "~/public/frieda/avatars/imane.svg"
+        },
+        {
+          "path": "public/frieda/avatars/karim-bennani.svg",
+          "type": "registry:file",
+          "target": "~/public/frieda/avatars/karim-bennani.svg"
+        },
+        {
+          "path": "public/frieda/avatars/lara-voss.svg",
+          "type": "registry:file",
+          "target": "~/public/frieda/avatars/lara-voss.svg"
+        },
+        {
+          "path": "public/frieda/avatars/mona-adel.svg",
+          "type": "registry:file",
+          "target": "~/public/frieda/avatars/mona-adel.svg"
+        },
+        {
+          "path": "public/frieda/avatars/omar-faris.svg",
+          "type": "registry:file",
+          "target": "~/public/frieda/avatars/omar-faris.svg"
+        },
+        {
+          "path": "public/frieda/avatars/samantha.svg",
+          "type": "registry:file",
+          "target": "~/public/frieda/avatars/samantha.svg"
+        },
+        {
+          "path": "public/frieda/avatars/sarah.svg",
+          "type": "registry:file",
+          "target": "~/public/frieda/avatars/sarah.svg"
+        },
+        {
+          "path": "public/frieda/avatars/sofia-marin.svg",
+          "type": "registry:file",
+          "target": "~/public/frieda/avatars/sofia-marin.svg"
+        },
+        {
+          "path": "public/frieda/avatars/tom-becker.svg",
+          "type": "registry:file",
+          "target": "~/public/frieda/avatars/tom-becker.svg"
+        },
+        {
+          "path": "public/frieda/avatars/yara-haddad.svg",
+          "type": "registry:file",
+          "target": "~/public/frieda/avatars/yara-haddad.svg"
+        },
+        {
+          "path": "public/frieda/avatars/zane-cooper.svg",
+          "type": "registry:file",
+          "target": "~/public/frieda/avatars/zane-cooper.svg"
+        }
+      ]
+    },
+    {
+      "name": "lib",
+      "type": "registry:lib",
+      "title": "Data and state",
+      "description": "Mock data, formatters, navigation, a small persisted store, file downloads and voice input. Swap data.ts for your API.",
+      "dependencies": [
+        "sonner"
+      ],
+      "registryDependencies": [
+        "@frieda/chat"
+      ],
+      "files": [
+        {
+          "path": "src/registry/frieda/lib/data.ts",
+          "type": "registry:lib"
+        },
+        {
+          "path": "src/registry/frieda/lib/format.ts",
+          "type": "registry:lib"
+        },
+        {
+          "path": "src/registry/frieda/lib/store.ts",
+          "type": "registry:lib"
+        },
+        {
+          "path": "src/registry/frieda/lib/nav.ts",
+          "type": "registry:lib"
+        },
+        {
+          "path": "src/registry/frieda/lib/download.ts",
+          "type": "registry:lib"
+        },
+        {
+          "path": "src/registry/frieda/lib/voice.ts",
+          "type": "registry:lib"
+        }
+      ]
+    },
+    {
+      "name": "ui-kit",
+      "type": "registry:component",
+      "title": "Frieda UI kit",
+      "description": "Panels, page header with date ranges, SVG charts (rings, gauge, donut, pie, area, bars), bank cards, transaction rows, dialogs, avatars, product art and document thumbnails.",
+      "dependencies": [
+        "lucide-react",
+        "sonner",
+        "radix-ui"
+      ],
+      "registryDependencies": [
+        "dialog",
+        "dropdown-menu",
+        "@frieda/theme",
+        "@frieda/lib",
+        "@frieda/avatars"
+      ],
+      "files": [
+        {
+          "path": "src/registry/frieda/components/frieda/panel.tsx",
+          "type": "registry:component"
+        },
+        {
+          "path": "src/registry/frieda/components/frieda/page-header.tsx",
+          "type": "registry:component"
+        },
+        {
+          "path": "src/registry/frieda/components/frieda/charts.tsx",
+          "type": "registry:component"
+        },
+        {
+          "path": "src/registry/frieda/components/frieda/bank-card.tsx",
+          "type": "registry:component"
+        },
+        {
+          "path": "src/registry/frieda/components/frieda/transactions.tsx",
+          "type": "registry:component"
+        },
+        {
+          "path": "src/registry/frieda/components/frieda/dialogs.tsx",
+          "type": "registry:component"
+        },
+        {
+          "path": "src/registry/frieda/components/frieda/amount-dialog.tsx",
+          "type": "registry:component"
+        },
+        {
+          "path": "src/registry/frieda/components/frieda/person-avatar.tsx",
+          "type": "registry:component"
+        },
+        {
+          "path": "src/registry/frieda/components/frieda/logo.tsx",
+          "type": "registry:component"
+        },
+        {
+          "path": "src/registry/frieda/components/frieda/side-panel.tsx",
+          "type": "registry:component"
+        },
+        {
+          "path": "src/registry/frieda/components/frieda/reward-art.tsx",
+          "type": "registry:component"
+        },
+        {
+          "path": "src/registry/frieda/components/frieda/doc-thumb.tsx",
+          "type": "registry:component"
+        }
+      ]
+    },
+    {
+      "name": "app-shell",
+      "type": "registry:block",
+      "title": "App shell",
+      "description": "Collapsible sidebar, top bar with ⌘K search, notifications, widgets center and the Frieda AI assistant built on chatcn.",
+      "dependencies": [
+        "lucide-react",
+        "sonner",
+        "radix-ui"
+      ],
+      "registryDependencies": [
+        "dropdown-menu",
+        "tooltip",
+        "sonner",
+        "@frieda/ui-kit",
+        "@frieda/chat",
+        "@frieda/lib"
+      ],
+      "files": [
+        {
+          "path": "src/registry/frieda/components/frieda/app-shell.tsx",
+          "type": "registry:component"
+        },
+        {
+          "path": "src/registry/frieda/components/frieda/sidebar.tsx",
+          "type": "registry:component"
+        },
+        {
+          "path": "src/registry/frieda/components/frieda/topbar.tsx",
+          "type": "registry:component"
+        },
+        {
+          "path": "src/registry/frieda/components/frieda/search.tsx",
+          "type": "registry:component"
+        },
+        {
+          "path": "src/registry/frieda/components/frieda/notifications-panel.tsx",
+          "type": "registry:component"
+        },
+        {
+          "path": "src/registry/frieda/components/frieda/widgets.tsx",
+          "type": "registry:component"
+        },
+        {
+          "path": "src/registry/frieda/components/frieda/assistant/assistant-panel.tsx",
+          "type": "registry:component"
+        },
+        {
+          "path": "src/registry/frieda/components/frieda/assistant/engine.ts",
+          "type": "registry:component"
+        },
+        {
+          "path": "src/registry/frieda/blocks/app-shell/layout.tsx",
+          "type": "registry:file",
+          "target": "app/(frieda)/layout.tsx"
+        }
+      ]
+    },
+    {
+      "name": "dashboard",
+      "type": "registry:block",
+      "title": "Dashboard",
+      "description": "Balance, activity, goals, cards, quick links, recent transactions and quick transfer.",
+      "dependencies": [
+        "lucide-react",
+        "sonner"
+      ],
+      "registryDependencies": [
+        "@frieda/app-shell"
+      ],
+      "files": [
+        {
+          "path": "src/registry/frieda/blocks/dashboard/page.tsx",
+          "type": "registry:page",
+          "target": "app/(frieda)/page.tsx"
+        }
+      ]
+    },
+    {
+      "name": "wallet",
+      "type": "registry:block",
+      "title": "Wallet",
+      "description": "Total balance, top spenders, top earners and top recipients.",
+      "dependencies": [
+        "lucide-react",
+        "sonner"
+      ],
+      "registryDependencies": [
+        "@frieda/app-shell"
+      ],
+      "files": [
+        {
+          "path": "src/registry/frieda/blocks/wallet/page.tsx",
+          "type": "registry:page",
+          "target": "app/(frieda)/wallet/page.tsx"
+        }
+      ]
+    },
+    {
+      "name": "cards",
+      "type": "registry:block",
+      "title": "My cards",
+      "description": "Card carousel with top up, details, freeze, edit and delete, plus card budget and earners.",
+      "dependencies": [
+        "lucide-react",
+        "sonner"
+      ],
+      "registryDependencies": [
+        "@frieda/app-shell"
+      ],
+      "files": [
+        {
+          "path": "src/registry/frieda/blocks/cards/page.tsx",
+          "type": "registry:page",
+          "target": "app/(frieda)/cards/page.tsx"
+        }
+      ]
+    },
+    {
+      "name": "add-card",
+      "type": "registry:block",
+      "title": "Add new card",
+      "description": "Live card preview, color picker and a validated card form.",
+      "dependencies": [
+        "lucide-react",
+        "sonner"
+      ],
+      "registryDependencies": [
+        "checkbox",
+        "@frieda/app-shell"
+      ],
+      "files": [
+        {
+          "path": "src/registry/frieda/blocks/add-card/page.tsx",
+          "type": "registry:page",
+          "target": "app/(frieda)/cards/new/page.tsx"
+        }
+      ]
+    },
+    {
+      "name": "transactions",
+      "type": "registry:block",
+      "title": "Transactions",
+      "description": "Grouped transaction list with filters, spending donut, budget and CSV report.",
+      "dependencies": [
+        "lucide-react",
+        "sonner"
+      ],
+      "registryDependencies": [
+        "dropdown-menu",
+        "@frieda/app-shell"
+      ],
+      "files": [
+        {
+          "path": "src/registry/frieda/blocks/transactions/page.tsx",
+          "type": "registry:page",
+          "target": "app/(frieda)/transactions/page.tsx"
+        }
+      ]
+    },
+    {
+      "name": "analytics",
+      "type": "registry:block",
+      "title": "Analytics",
+      "description": "Income management, income graph, spending, goals rings and savings.",
+      "dependencies": [
+        "lucide-react",
+        "sonner"
+      ],
+      "registryDependencies": [
+        "@frieda/app-shell"
+      ],
+      "files": [
+        {
+          "path": "src/registry/frieda/blocks/analytics/page.tsx",
+          "type": "registry:page",
+          "target": "app/(frieda)/analytics/page.tsx"
+        }
+      ]
+    },
+    {
+      "name": "documents",
+      "type": "registry:block",
+      "title": "Documents",
+      "description": "Grid and list views, sorting, upload with drag and drop, preview, rename, share and delete.",
+      "dependencies": [
+        "lucide-react",
+        "sonner"
+      ],
+      "registryDependencies": [
+        "dropdown-menu",
+        "tooltip",
+        "@frieda/app-shell"
+      ],
+      "files": [
+        {
+          "path": "src/registry/frieda/blocks/documents/page.tsx",
+          "type": "registry:page",
+          "target": "app/(frieda)/documents/page.tsx"
+        }
+      ]
+    },
+    {
+      "name": "budget",
+      "type": "registry:block",
+      "title": "Budget",
+      "description": "Monthly budget, latest transactions, spending pie and budget history with an edit dialog.",
+      "dependencies": [
+        "lucide-react",
+        "sonner"
+      ],
+      "registryDependencies": [
+        "@frieda/app-shell"
+      ],
+      "files": [
+        {
+          "path": "src/registry/frieda/blocks/budget/page.tsx",
+          "type": "registry:page",
+          "target": "app/(frieda)/budget/page.tsx"
+        }
+      ]
+    },
+    {
+      "name": "recipients",
+      "type": "registry:block",
+      "title": "Recipients",
+      "description": "A–Z recipients with search, favorites and sorting, profile actions and history.",
+      "dependencies": [
+        "lucide-react",
+        "sonner"
+      ],
+      "registryDependencies": [
+        "dropdown-menu",
+        "@frieda/app-shell"
+      ],
+      "files": [
+        {
+          "path": "src/registry/frieda/blocks/recipients/page.tsx",
+          "type": "registry:page",
+          "target": "app/(frieda)/recipients/page.tsx"
+        }
+      ]
+    },
+    {
+      "name": "rewards",
+      "type": "registry:block",
+      "title": "Rewards",
+      "description": "Points, add points, redeem dialog, order again and award shelves.",
+      "dependencies": [
+        "lucide-react",
+        "sonner"
+      ],
+      "registryDependencies": [
+        "@frieda/app-shell"
+      ],
+      "files": [
+        {
+          "path": "src/registry/frieda/blocks/rewards/page.tsx",
+          "type": "registry:page",
+          "target": "app/(frieda)/rewards/page.tsx"
+        }
+      ]
+    },
+    {
+      "name": "settings",
+      "type": "registry:block",
+      "title": "Settings",
+      "description": "Profile, preferences, notifications, security and demo data reset.",
+      "dependencies": [
+        "lucide-react",
+        "sonner"
+      ],
+      "registryDependencies": [
+        "switch",
+        "@frieda/app-shell"
+      ],
+      "files": [
+        {
+          "path": "src/registry/frieda/blocks/settings/page.tsx",
+          "type": "registry:page",
+          "target": "app/(frieda)/settings/page.tsx"
+        }
+      ]
+    },
+    {
+      "name": "help",
+      "type": "registry:block",
+      "title": "Help center",
+      "description": "Ticket stats, ticket tabs, response rate and FAQ accordion, with a New ticket dialog.",
+      "dependencies": [
+        "lucide-react",
+        "sonner"
+      ],
+      "registryDependencies": [
+        "@frieda/app-shell",
+        "@frieda/chat"
+      ],
+      "files": [
+        {
+          "path": "src/registry/frieda/components/frieda/support.tsx",
+          "type": "registry:component"
+        },
+        {
+          "path": "src/registry/frieda/blocks/help/page.tsx",
+          "type": "registry:page",
+          "target": "app/(frieda)/help/page.tsx"
+        }
+      ]
+    },
+    {
+      "name": "tickets",
+      "type": "registry:block",
+      "title": "My tickets",
+      "description": "Support chat on chatcn: ticket list, replies, reactions, attachments, voice input, typing indicator and close/reopen.",
+      "dependencies": [
+        "lucide-react",
+        "sonner"
+      ],
+      "registryDependencies": [
+        "dropdown-menu",
+        "@frieda/help",
+        "@frieda/chat"
+      ],
+      "files": [
+        {
+          "path": "src/registry/frieda/blocks/tickets/page.tsx",
+          "type": "registry:page",
+          "target": "app/(frieda)/help/tickets/page.tsx"
+        }
+      ]
+    },
+    {
+      "name": "app",
+      "type": "registry:item",
+      "title": "Frieda — Finance Dashboard (Free)",
+      "description": "Free dark finance SaaS dashboard: 13 screens, AI assistant and support chat on chatcn, notifications, widgets and search. Everything is interactive and runs on mock data.",
+      "registryDependencies": [
+        "@frieda/theme",
+        "@frieda/font-poppins",
+        "@frieda/chat",
+        "@frieda/avatars",
+        "@frieda/lib",
+        "@frieda/ui-kit",
+        "@frieda/app-shell",
+        "@frieda/dashboard",
+        "@frieda/wallet",
+        "@frieda/cards",
+        "@frieda/add-card",
+        "@frieda/transactions",
+        "@frieda/analytics",
+        "@frieda/documents",
+        "@frieda/budget",
+        "@frieda/recipients",
+        "@frieda/rewards",
+        "@frieda/settings",
+        "@frieda/help",
+        "@frieda/tickets"
+      ],
+      "docs": "Wrap your root layout with <TooltipProvider> and add <Toaster theme=\"dark\" />. Add className=\"dark\" to <html>. See the README for the full layout.",
+      "categories": [
+        "dashboard",
+        "finance",
+        "template"
+      ],
+      "meta": {
+        "categories": [
+          "dashboard",
+          "freebie"
+        ],
+        "price": "free",
+        "license": "MIT"
+      }
+    }
+  ]
+}

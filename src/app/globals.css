@@ -1,42 +1,356 @@
-:root {
-  --background: #ffffff;
-  --foreground: #171717;
-}
+@import "tailwindcss";
+@import "tw-animate-css";
+@import "shadcn/tailwind.css";
+@import "../components/ui/chat/chatcn.css";
 
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
+@custom-variant dark (&:is(.dark *));
+
+@theme inline {
+  --font-heading: var(--font-sans);
+  --font-sans: var(--font-poppins), ui-sans-serif, system-ui, sans-serif;
+  --color-sidebar-ring: var(--sidebar-ring);
+  --color-sidebar-border: var(--sidebar-border);
+  --color-sidebar-accent-foreground: var(--sidebar-accent-foreground);
+  --color-sidebar-accent: var(--sidebar-accent);
+  --color-sidebar-primary-foreground: var(--sidebar-primary-foreground);
+  --color-sidebar-primary: var(--sidebar-primary);
+  --color-sidebar-foreground: var(--sidebar-foreground);
+  --color-sidebar: var(--sidebar);
+  --color-chart-5: var(--chart-5);
+  --color-chart-4: var(--chart-4);
+  --color-chart-3: var(--chart-3);
+  --color-chart-2: var(--chart-2);
+  --color-chart-1: var(--chart-1);
+  --color-ring: var(--ring);
+  --color-input: var(--input);
+  --color-border: var(--border);
+  --color-destructive: var(--destructive);
+  --color-accent-foreground: var(--accent-foreground);
+  --color-accent: var(--accent);
+  --color-muted-foreground: var(--muted-foreground);
+  --color-muted: var(--muted);
+  --color-secondary-foreground: var(--secondary-foreground);
+  --color-secondary: var(--secondary);
+  --color-primary-foreground: var(--primary-foreground);
+  --color-primary: var(--primary);
+  --color-popover-foreground: var(--popover-foreground);
+  --color-popover: var(--popover);
+  --color-card-foreground: var(--card-foreground);
+  --color-card: var(--card);
+  --color-foreground: var(--foreground);
+  --color-background: var(--background);
+  --radius-sm: calc(var(--radius) * 0.6);
+  --radius-md: calc(var(--radius) * 0.8);
+  --radius-lg: var(--radius);
+  --radius-xl: calc(var(--radius) * 1.4);
+  --radius-2xl: calc(var(--radius) * 1.8);
+  --radius-3xl: calc(var(--radius) * 2.2);
+  --radius-4xl: calc(var(--radius) * 2.6);
+
+  /* Frieda palette */
+  --color-surface: var(--surface);
+  --color-surface-2: var(--surface-2);
+  --color-surface-3: var(--surface-3);
+  --color-subtle: var(--subtle);
+  --color-faint: var(--faint);
+  --color-teal: var(--teal);
+  --color-teal-deep: var(--teal-deep);
+  --color-teal-soft: var(--teal-soft);
+  --color-mint: var(--mint);
+  --color-rose: var(--rose);
+  --color-pink: var(--pink);
+  --color-sun: var(--sun);
+  --color-lilac: var(--lilac);
+  --color-lavender: var(--lavender);
+  --color-violet: var(--violet);
+  --color-grape: var(--grape);
+
+  --animate-shimmer: shimmer 1.6s linear infinite;
+  --animate-float-in: float-in 0.35s cubic-bezier(0.22, 1, 0.36, 1) both;
+
+  @keyframes shimmer {
+    from {
+      background-position: 200% 0;
+    }
+    to {
+      background-position: -200% 0;
+    }
+  }
+
+  @keyframes float-in {
+    from {
+      opacity: 0;
+      transform: translateY(8px);
+    }
+    to {
+      opacity: 1;
+      transform: none;
+    }
   }
 }
 
-html,
-body {
-  max-width: 100vw;
-  overflow-x: hidden;
+/* Frieda is dark-only: the same tokens apply with or without the .dark class. */
+:root,
+.dark {
+  color-scheme: dark;
+  --radius: 1rem;
+
+  --background: #2e2e2e;
+  --foreground: #f4f4f4;
+  --card: #1f1f1f;
+  --card-foreground: #f4f4f4;
+  --popover: #262626;
+  --popover-foreground: #f4f4f4;
+  --primary: #15e0cc;
+  --primary-foreground: #0f1f1d;
+  --secondary: #262626;
+  --secondary-foreground: #f4f4f4;
+  --muted: #262626;
+  --muted-foreground: #9c9c9c;
+  --accent: #333333;
+  --accent-foreground: #f4f4f4;
+  --destructive: #f7385a;
+  --border: rgb(255 255 255 / 8%);
+  --input: #1b1b1b;
+  --ring: #15e0cc;
+
+  --chart-1: #15e0cc;
+  --chart-2: #f7385a;
+  --chart-3: #fdcc53;
+  --chart-4: #a990ff;
+  --chart-5: #63e9e0;
+
+  --sidebar: #222222;
+  --sidebar-foreground: #a3a3a3;
+  --sidebar-primary: #15e0cc;
+  --sidebar-primary-foreground: #0f1f1d;
+  --sidebar-accent: #3a3a3a;
+  --sidebar-accent-foreground: #f4f4f4;
+  --sidebar-border: rgb(255 255 255 / 5%);
+  --sidebar-ring: #15e0cc;
+
+  --surface: #1d1d1d;
+  --surface-2: #262626;
+  --surface-3: #313131;
+  --subtle: #a3a3a3;
+  --faint: #6e6e6e;
+  --teal: #15e0cc;
+  --teal-deep: #0a5f56;
+  --teal-soft: #63e9e0;
+  --mint: #b9f6ef;
+  --rose: #f7385a;
+  --pink: #ff6b81;
+  --sun: #fdcc53;
+  --lilac: #a990ff;
+  --lavender: #d7cbff;
+  --violet: #8a6cf5;
+  --grape: #6a4bd6;
 }
 
-body {
-  color: var(--foreground);
-  background: var(--background);
-  font-family: Arial, Helvetica, sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-}
-
-* {
-  box-sizing: border-box;
-  padding: 0;
-  margin: 0;
-}
-
-a {
-  color: inherit;
-  text-decoration: none;
-}
-
-@media (prefers-color-scheme: dark) {
+@layer base {
+  * {
+    @apply border-border outline-ring/50;
+  }
   html {
-    color-scheme: dark;
+    @apply font-sans;
+  }
+  body {
+    @apply bg-background text-foreground;
+    background-image: linear-gradient(160deg, #2b2b2b 0%, #2e2e2e 45%, #353535 100%);
+    background-attachment: fixed;
+    font-feature-settings: "tnum" 0;
+  }
+  button:not(:disabled),
+  [role="button"]:not(:disabled) {
+    cursor: pointer;
+  }
+  ::selection {
+    background: rgb(21 224 204 / 35%);
+  }
+}
+
+@layer components {
+  /* Card surface used by every dashboard panel */
+  .frieda-card {
+    position: relative;
+    border-radius: 18px;
+    border: 1px solid rgb(255 255 255 / 5%);
+    background: linear-gradient(180deg, #1c1c1c 0%, #212121 60%, #242424 100%);
+    box-shadow: 0 18px 40px -24px rgb(0 0 0 / 60%);
+  }
+
+  /* Inner tile (income tiles, notification cards, product cards) */
+  .frieda-tile {
+    border-radius: 14px;
+    background: linear-gradient(180deg, #262626 0%, #2a2a2a 100%);
+  }
+
+  /* Right-side panels (AI chat, notifications, widgets) */
+  .frieda-panel {
+    background:
+      radial-gradient(70% 45% at 85% 70%, rgb(21 224 204 / 9%) 0%, transparent 70%),
+      radial-gradient(60% 40% at 15% 20%, rgb(255 255 255 / 3%) 0%, transparent 70%),
+      linear-gradient(180deg, #2c2f2f 0%, #2b2d2d 100%);
+  }
+
+  .frieda-scroll {
+    scrollbar-width: thin;
+    scrollbar-color: rgb(255 255 255 / 12%) transparent;
+  }
+  .frieda-scroll::-webkit-scrollbar {
+    width: 6px;
+    height: 6px;
+  }
+  .frieda-scroll::-webkit-scrollbar-thumb {
+    border-radius: 999px;
+    background: rgb(255 255 255 / 12%);
+  }
+
+  .frieda-no-scrollbar {
+    scrollbar-width: none;
+  }
+  .frieda-no-scrollbar::-webkit-scrollbar {
+    display: none;
+  }
+
+  /* Chart entrance animations */
+  .frieda-grow {
+    transform-origin: bottom;
+    animation: frieda-grow 0.8s cubic-bezier(0.22, 1, 0.36, 1) both;
+  }
+  .frieda-grow-x {
+    transform-origin: left;
+    animation: frieda-grow-x 0.9s cubic-bezier(0.22, 1, 0.36, 1) both;
+  }
+  .frieda-ring {
+    animation: frieda-ring 1s cubic-bezier(0.22, 1, 0.36, 1) both;
+  }
+  .frieda-draw {
+    stroke-dasharray: 1200;
+    animation: frieda-draw 1.4s ease-out both;
+  }
+}
+
+@keyframes frieda-grow {
+  from {
+    transform: scaleY(0);
+  }
+}
+@keyframes frieda-grow-x {
+  from {
+    transform: scaleX(0);
+  }
+}
+@keyframes frieda-ring {
+  from {
+    stroke-dashoffset: var(--len);
+  }
+}
+@keyframes frieda-draw {
+  from {
+    stroke-dashoffset: 1200;
+  }
+  to {
+    stroke-dashoffset: 0;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .frieda-grow,
+  .frieda-grow-x,
+  .frieda-ring,
+  .frieda-draw {
+    animation: none;
+  }
+}
+
+/* ─── chatcn → Frieda theme ─────────────────────────────────────────────────
+   chatcn themes are CSS variables on [data-chat-theme]. Frieda starts from the
+   dark "midnight" theme and swaps in its teal palette. */
+.frieda-chat[data-chat-theme] {
+  --chat-font-sans: var(--font-poppins), ui-sans-serif, system-ui, sans-serif;
+  --chat-bg-app: transparent;
+  --chat-bg-sidebar: #1b1b1b;
+  --chat-bg-main: #262626;
+  --chat-bg-header: transparent;
+  --chat-bg-composer: transparent;
+  --chat-bg-content-card: #2b2b2b;
+  --chat-bg-code: #181818;
+
+  --chat-bubble-outgoing: #15e0cc;
+  --chat-bubble-outgoing-text: #102422;
+  --chat-bubble-incoming: #1f1f1f;
+  --chat-bubble-incoming-text: #f1f1f1;
+
+  --chat-accent: #15e0cc;
+  --chat-accent-soft: rgb(21 224 204 / 10%);
+  --chat-green: #15e0cc;
+  --chat-orange: #fdcc53;
+  --chat-red: #f7385a;
+
+  --chat-text-primary: #f4f4f4;
+  --chat-text-secondary: #a3a3a3;
+  --chat-text-tertiary: #6e6e6e;
+  --chat-border: rgb(255 255 255 / 6%);
+  --chat-border-strong: rgb(255 255 255 / 10%);
+
+  --chat-shadow-md: 0 8px 24px rgb(0 0 0 / 35%);
+  --chat-shadow-toolbar: 0 0 0 1px rgb(255 255 255 / 8%);
+  --chat-bubble-radius: 20px;
+  --chat-spacing-messages: 18px;
+
+  font-family: var(--chat-font-sans);
+}
+
+.frieda-chat .chat-bubble p {
+  font-size: 15px;
+  line-height: 1.6;
+}
+.frieda-chat .chat-bubble {
+  padding: 12px 20px;
+  border: 1px solid rgb(255 255 255 / 4%);
+}
+.frieda-chat .chat-composer > div {
+  border-top: 0;
+}
+.frieda-chat .chat-composer button[aria-label="Send message"]:not(:disabled) {
+  color: #0f1f1d;
+}
+
+/* chatcn ships these hooks without keyframes */
+.chat-typing-dot {
+  animation: chat-typing 1.2s ease-in-out infinite;
+}
+.chat-toolbar-enter {
+  animation: chat-toolbar-in 0.18s ease-out both;
+}
+
+/* Transform only: the hover toolbar fades with its own opacity classes. */
+@keyframes chat-toolbar-in {
+  from {
+    transform: translateY(4px) scale(0.98);
+  }
+  to {
+    transform: none;
+  }
+}
+
+@keyframes chat-typing {
+  0%,
+  60%,
+  100% {
+    opacity: 0.35;
+    transform: translateY(0);
+  }
+  30% {
+    opacity: 1;
+    transform: translateY(-3px);
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .chat-typing-dot,
+  .chat-toolbar-enter {
+    animation: none;
   }
 }
