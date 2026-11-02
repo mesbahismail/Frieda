@@ -132,4 +132,4 @@ from `src/registry/frieda/blocks`, so what you see is exactly what gets installe
 
 ## License
 
-MIT. Free for personal and commercial use. See [LICENSE](LICENSE).
+Free for personal and commercial projects. No resale or redistribution. See [LICENSE](LICENSE).
