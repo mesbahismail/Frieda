@@ -134,9 +134,9 @@ export default function CardsPage() {
         }
       />
 
-      <div className="grid gap-6 lg:grid-cols-2">
-        <div className="grid min-w-0 gap-6">
-          <Panel title="My cards">
+      <div className="grid items-stretch gap-6 lg:grid-cols-2 lg:grid-rows-[auto_auto_minmax(0,1fr)]">
+        <div className="grid min-w-0 gap-6 lg:contents">
+          <Panel title="My cards" className="lg:col-start-1 lg:row-span-2 lg:row-start-1">
             {card ? (
               <>
                 <CardCarousel
@@ -181,13 +181,13 @@ export default function CardsPage() {
             )}
           </Panel>
 
-          <Panel title="Top earners" bodyClassName="min-h-[220px]">
+          <Panel title="Top earners" className="lg:col-start-1 lg:row-start-3" bodyClassName="min-h-[220px]">
             <ValueBars data={cardEarners.map((e, i) => ({ ...e, value: earners[i] }))} max={10500} />
           </Panel>
         </div>
 
-        <div className="grid min-w-0 gap-6 lg:grid-rows-[auto_minmax(0,1fr)]">
-          <Panel title="Card budget">
+        <div className="grid min-w-0 gap-6 lg:contents">
+          <Panel title="Card budget" className="lg:col-start-2 lg:row-start-1">
             <ProgressBar value={spent} max={cardBudget.limit} className="mt-1" />
             <div className="mt-6 flex flex-wrap items-end justify-between gap-3">
               <div className="flex items-baseline gap-2">
@@ -198,7 +198,7 @@ export default function CardsPage() {
             </div>
           </Panel>
 
-          <Panel title="Recent transactions" className="min-h-[400px] lg:h-full" bodyClassName="-mr-3">
+          <Panel title="Recent transactions" className="min-h-[400px] lg:col-start-2 lg:row-span-2 lg:row-start-2" bodyClassName="-mr-3">
             <PaginatedTransactions items={transactions} pageSize={5} />
           </Panel>
         </div>

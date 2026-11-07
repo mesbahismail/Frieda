@@ -76,11 +76,11 @@ export default function TransactionsPage() {
         }
       />
 
-      <div className="grid gap-6 xl:grid-cols-[minmax(0,1fr)_minmax(320px,373px)]">
+      <div className="grid items-stretch gap-6 xl:grid-cols-[minmax(0,1fr)_minmax(320px,373px)] xl:grid-rows-[minmax(0,1fr)_auto]">
         <Panel
           title="Latest transactions"
           menu={false}
-          className="min-h-[680px] xl:h-[max(720px,calc(100svh-207px))]"
+          className="min-h-[680px] xl:col-start-1 xl:row-span-2 xl:row-start-1 xl:min-h-[max(720px,calc(100svh-207px))]"
           bodyClassName="-mr-3"
           action={
             <DropdownMenu>
@@ -107,14 +107,14 @@ export default function TransactionsPage() {
           <PaginatedTransactions items={items} pageSize={6} />
         </Panel>
 
-        <div className="grid min-w-0 gap-6 md:grid-cols-2 xl:grid-cols-1 xl:grid-rows-[minmax(0,1fr)_auto]">
-          <Panel title="Spending">
+        <div className="grid min-w-0 gap-6 md:grid-cols-2 xl:contents">
+          <Panel title="Spending" className="xl:col-start-2 xl:row-start-1">
             <Donut segments={donut} className="mt-1 max-w-[232px]" />
             <div className="mt-8 px-2">
               <SpendingLegend items={spending} />
             </div>
           </Panel>
-          <Panel title="Budget this month">
+          <Panel title="Budget this month" className="xl:col-start-2 xl:row-start-2">
             <ProgressBar value={spent} max={limit} className="mt-1" />
             <div className="mt-6 flex flex-wrap items-end justify-between gap-2">
               <div className="flex items-baseline gap-1.5">

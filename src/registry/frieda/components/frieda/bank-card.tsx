@@ -47,7 +47,7 @@ export function BankCardVisual({
   return (
     <div
       className={cn(
-        "@container relative isolate aspect-[343/209] w-full overflow-hidden rounded-[22px] text-white shadow-[0_24px_40px_-22px_rgb(0_0_0/0.8)] select-none",
+        "@container relative isolate aspect-[343/209] w-full overflow-hidden rounded-[22px] text-left text-white shadow-[0_24px_40px_-22px_rgb(0_0_0/0.8)] select-none",
         className
       )}
       style={{ background: cardGradients[card.color] }}
@@ -146,9 +146,9 @@ export function CardCarousel({
   const arrow =
     "absolute top-1/2 z-10 grid size-[30px] -translate-y-1/2 place-items-center rounded-[9px] border border-white/30 bg-[#1f1f1f]/85 text-white shadow-[0_4px_20px_rgb(0_0_0/0.6)] backdrop-blur transition-colors hover:bg-[#1f1f1f] focus-visible:outline-2 focus-visible:outline-teal"
   return (
-    <div>
+    <div className="@container [--carousel-card-width:min(48cqw,343px)]">
       <div
-        className="relative -mx-[22px] overflow-hidden py-5 [perspective:1000px]"
+        className="relative -mx-[22px]"
         role="region"
         aria-roledescription="carousel"
         aria-label="Bank cards"
@@ -159,31 +159,34 @@ export function CardCarousel({
           }
         }}
       >
-        <div aria-hidden className="invisible mx-auto aspect-[343/209] w-[266px] max-w-[64%]" />
-        {cards.map((card, i) => {
-          let offset = i - active
-          if (offset > cards.length / 2) offset -= cards.length
-          if (offset < -cards.length / 2) offset += cards.length
-          return (
-            <button
-              key={card.id}
-              type="button"
-              tabIndex={offset === 0 ? 0 : -1}
-              onClick={() => onChange(i)}
-              aria-label={`${card.type} ending ${card.number.slice(-4)}`}
-              className="absolute top-5 left-1/2 w-[266px] max-w-[64%] transition-[transform,opacity,filter] duration-500 ease-out motion-reduce:transition-none"
-              style={{
-                transform: `translateX(calc(-50% + ${offset} * 92%)) translateZ(${offset === 0 ? 0 : -80}px) rotateY(${offset * -18}deg) rotateZ(${offset * 5}deg) scale(${offset === 0 ? 1 : 0.92})`,
-                opacity: Math.abs(offset) > 1 ? 0 : offset === 0 ? 1 : 0.7,
-                filter: offset === 0 ? "none" : "brightness(0.75)",
-                zIndex: offset === 0 ? 3 : 1,
-                pointerEvents: Math.abs(offset) > 1 ? "none" : "auto",
-              }}
-            >
-              <BankCardVisual card={card} reveal={reveal && offset === 0} />
-            </button>
-          )
-        })}
+        {/* Clip only the horizontal previews; let the shadows extend vertically. */}
+        <div className="relative mx-auto max-w-[calc(var(--carousel-card-width)*2.1+48px)] overflow-x-clip py-5">
+          <div aria-hidden className="invisible mx-auto aspect-[343/209] w-[var(--carousel-card-width)]" />
+          {cards.map((card, i) => {
+            let offset = i - active
+            if (offset > cards.length / 2) offset -= cards.length
+            if (offset < -cards.length / 2) offset += cards.length
+            return (
+              <button
+                key={card.id}
+                type="button"
+                tabIndex={offset === 0 ? 0 : -1}
+                onClick={() => onChange(i)}
+                aria-label={`${card.type} ending ${card.number.slice(-4)}`}
+                className="absolute top-5 left-1/2 w-[var(--carousel-card-width)] transition-[transform,opacity,filter] duration-500 ease-out motion-reduce:transition-none"
+                style={{
+                  transform: `translateX(calc(-50% + ${offset} * (100% + 24px))) perspective(1000px) rotateY(${offset * -18}deg) rotateZ(${offset * 5}deg) scale(${offset === 0 ? 1 : 0.92})`,
+                  opacity: Math.abs(offset) > 1 ? 0 : offset === 0 ? 1 : 0.7,
+                  filter: offset === 0 ? "none" : "brightness(0.75)",
+                  zIndex: offset === 0 ? 3 : 1,
+                  pointerEvents: Math.abs(offset) > 1 ? "none" : "auto",
+                }}
+              >
+                <BankCardVisual card={card} reveal={reveal && offset === 0} />
+              </button>
+            )
+          })}
+        </div>
         {cards.length > 1 && (
           <div className="pointer-events-none absolute inset-0 z-10">
             <span className="absolute inset-y-0 left-0 w-[18%] bg-gradient-to-r from-[#1e1e1e] to-transparent" />
@@ -197,7 +200,7 @@ export function CardCarousel({
           </div>
         )}
       </div>
-      <Dots count={cards.length} active={active} onSelect={onChange} className="mt-6" />
+      <Dots count={cards.length} active={active} onSelect={onChange} className="mt-9" />
     </div>
   )
 }
