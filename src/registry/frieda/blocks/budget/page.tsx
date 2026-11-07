@@ -12,7 +12,7 @@ import { HistoryBars, Pie, ProgressBar } from "@/registry/frieda/components/frie
 import { FriedaDialog } from "@/registry/frieda/components/frieda/dialogs"
 import { DateRangeButton, PageHeader, primaryAction, useRange, vary } from "@/registry/frieda/components/frieda/page-header"
 import { Money, Panel, Pill, SeeAll } from "@/registry/frieda/components/frieda/panel"
-import { TransactionList } from "@/registry/frieda/components/frieda/transactions"
+import { PaginatedTransactions } from "@/registry/frieda/components/frieda/transactions"
 
 const categoryIcons: Record<string, LucideIcon> = {
   "Bills & payments": CreditCard,
@@ -141,7 +141,7 @@ export default function BudgetPage() {
           </Panel>
 
           <Panel title="Latest transactions" action={<SeeAll href="/transactions" />} className="lg:h-[480px]" bodyClassName="-mr-3">
-            <TransactionList items={transactions} className="frieda-scroll min-h-0 flex-1 overflow-y-auto pr-3" />
+            <PaginatedTransactions items={transactions} pageSize={5} />
           </Panel>
         </div>
 

@@ -16,9 +16,9 @@ import { downloadCsv } from "@/registry/frieda/lib/download"
 import { longDate, money } from "@/registry/frieda/lib/format"
 import { useFrieda } from "@/registry/frieda/lib/store"
 import { Donut, ProgressBar } from "@/registry/frieda/components/frieda/charts"
-import { DateRangeButton, PageHeader, primaryAction, ranges, useRange, vary } from "@/registry/frieda/components/frieda/page-header"
+import { DateRangeButton, PageHeader, primaryAction, rangeDetails, useRange, vary } from "@/registry/frieda/components/frieda/page-header"
 import { Money, Panel, Pill } from "@/registry/frieda/components/frieda/panel"
-import { kindMeta, TransactionList } from "@/registry/frieda/components/frieda/transactions"
+import { kindMeta, PaginatedTransactions } from "@/registry/frieda/components/frieda/transactions"
 
 /** Clockwise order of the donut in the design (legend keeps its own order). */
 const donutOrder = ["Transfers", "Groceries", "Savings", "Income"]
@@ -45,7 +45,7 @@ export default function TransactionsPage() {
   const transactions = useFrieda((s) => s.transactions)
   const limit = useFrieda((s) => s.budgetLimit)
 
-  const items = kind === "all" ? transactions : transactions.filter((t) => t.kind === kind)
+  const items = React.useMemo(() => kind === "all" ? transactions : transactions.filter((t) => t.kind === kind), [transactions, kind])
   const values = vary(spendingBreakdown.map((s) => s.value), range)
   const spending = spendingBreakdown.map((s, i) => ({ ...s, value: values[i] }))
   const donut = [...spending].sort((a, b) => donutOrder.indexOf(a.label) - donutOrder.indexOf(b.label))
@@ -57,7 +57,7 @@ export default function TransactionsPage() {
         ["Date", "Description", "Type", "Amount (USD)"],
         ...items.map((t) => [longDate(t.date), t.title, kindMeta[t.kind].label, t.amount.toFixed(2)]),
       ],
-      `frieda-transactions-${ranges[range].label.toLowerCase().replace(/\s+/g, "-")}.csv`
+      `frieda-transactions-${rangeDetails(range).label.toLowerCase().replace(/\s+/g, "-")}.csv`
     )
     toast.success("Report downloaded", { description: `${items.length} transactions exported as CSV.` })
   }
@@ -80,7 +80,7 @@ export default function TransactionsPage() {
         <Panel
           title="Latest transactions"
           menu={false}
-          className="xl:h-[max(640px,calc(100svh-207px))]"
+          className="min-h-[680px] xl:h-[max(720px,calc(100svh-207px))]"
           bodyClassName="-mr-3"
           action={
             <DropdownMenu>
@@ -104,10 +104,10 @@ export default function TransactionsPage() {
             </DropdownMenu>
           }
         >
-          <TransactionList items={items} className="frieda-scroll min-h-0 flex-1 overflow-y-auto pr-3 [&_.rounded-xl]:py-[11px]" />
+          <PaginatedTransactions items={items} pageSize={6} />
         </Panel>
 
-        <div className="grid min-w-0 content-start gap-6 md:grid-cols-2 xl:grid-cols-1">
+        <div className="grid min-w-0 gap-6 md:grid-cols-2 xl:grid-cols-1 xl:grid-rows-[minmax(0,1fr)_auto]">
           <Panel title="Spending">
             <Donut segments={donut} className="mt-1 max-w-[232px]" />
             <div className="mt-8 px-2">

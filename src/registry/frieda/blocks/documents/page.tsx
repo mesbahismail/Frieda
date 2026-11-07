@@ -510,9 +510,8 @@ function DocumentsView() {
                   ["list", List, "List view"],
                   ["grid", LayoutGrid, "Grid view"],
                 ] as const
-              ).map(([id, Icon, label], i) => (
+              ).map(([id, Icon, label]) => (
                 <React.Fragment key={id}>
-                  {i > 0 && <span className="mx-px h-5 w-px bg-[#4a4a4a]" />}
                   <button
                     type="button"
                     aria-label={label}

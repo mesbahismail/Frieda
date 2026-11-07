@@ -66,6 +66,7 @@ export function SidebarNav({ collapsed, onNavigate }: { collapsed: boolean; onNa
         ))}
       </div>
       <div className={cn("mt-8 flex flex-col", collapsed ? "gap-[15px]" : "gap-[11px]")}>
+        <div role="separator" className={cn("mb-2 h-px shrink-0 bg-white/10", collapsed ? "mx-4" : "mx-8")} />
         {secondaryNav.map((item) => (
           <NavLink key={item.href} item={item} collapsed={collapsed} onNavigate={onNavigate} />
         ))}

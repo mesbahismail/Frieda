@@ -88,9 +88,19 @@ function MobileNav() {
 
 export function Topbar() {
   const router = useRouter()
+  const [scrolled, setScrolled] = React.useState(false)
+  React.useEffect(() => {
+    const update = () => setScrolled(window.scrollY > 8)
+    update()
+    window.addEventListener("scroll", update, { passive: true })
+    return () => window.removeEventListener("scroll", update)
+  }, [])
   const cleared = useFrieda((s) => s.notificationsCleared)
   return (
-    <header className="sticky top-0 z-30 flex h-[76px] items-center gap-3 bg-[#2c2c2c]/80 px-4 backdrop-blur-md sm:px-6 lg:bg-transparent lg:px-[46px] lg:backdrop-blur-none">
+    <header className={cn(
+      "sticky top-0 z-30 flex h-[76px] shrink-0 items-center gap-3 border-b px-4 backdrop-blur-xl transition-[background-color,border-color,box-shadow] duration-200 sm:px-6 lg:px-[46px]",
+      scrolled ? "border-white/[0.08] bg-[#272727]/85 shadow-[0_8px_24px_-12px_rgb(0_0_0/0.5)]" : "border-transparent bg-[#2c2c2c]/50"
+    )}>
       <MobileNav />
       <div className="hidden h-[38px] shrink-0 items-center rounded-[10px] bg-[#151515] px-1 sm:flex">
         <button
@@ -135,8 +145,8 @@ export function Topbar() {
             <span className="hidden text-[17px] text-white sm:inline">{user.displayName}</span>
             <ChevronDown className="hidden size-4 text-[#d6d6d6] sm:block" />
           </DropdownMenuTrigger>
-          <DropdownMenuContent align="end" className="w-56">
-            <DropdownMenuLabel className="font-normal">
+          <DropdownMenuContent align="end" sideOffset={10} className="w-64 space-y-1 rounded-2xl p-2.5 [&_[data-slot=dropdown-menu-item]]:gap-3 [&_[data-slot=dropdown-menu-item]]:rounded-lg [&_[data-slot=dropdown-menu-item]]:px-3 [&_[data-slot=dropdown-menu-item]]:py-3">
+            <DropdownMenuLabel className="space-y-1 px-3 py-3 font-normal">
               <div className="text-sm text-white">{user.fullName}</div>
               <div className="text-xs text-muted-foreground">{user.email}</div>
             </DropdownMenuLabel>

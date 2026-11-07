@@ -1,6 +1,7 @@
 "use client"
 
-import { ArrowDownLeft, ArrowUpRight, CircleDollarSign, CreditCard, Gift, ShoppingCart, type LucideIcon } from "lucide-react"
+import * as React from "react"
+import { ChevronLeft, ChevronRight, ArrowDownLeft, ArrowUpRight, CircleDollarSign, CreditCard, Gift, ShoppingCart, type LucideIcon } from "lucide-react"
 
 import { cn } from "@/lib/utils"
 import type { Transaction, TxKind } from "@/registry/frieda/lib/data"
@@ -106,5 +107,36 @@ export function TransactionList({
         </div>
       ))}
     </div>
+  )
+}
+
+/** A bounded list with a footer that stays aligned with its widget. */
+export function PaginatedTransactions({ items, pageSize = 6, group = "day" }: {
+  items: Transaction[]
+  pageSize?: number
+  group?: "day" | "month" | "none"
+}) {
+  const [page, setPage] = React.useState(1)
+  const [previousItems, setPreviousItems] = React.useState(items)
+  if (items !== previousItems) {
+    setPreviousItems(items)
+    setPage(1)
+  }
+  const pages = Math.max(1, Math.ceil(items.length / pageSize))
+  const current = Math.min(page, pages)
+  const start = (current - 1) * pageSize
+  const button = "grid size-8 shrink-0 place-items-center rounded-lg text-sm transition-colors hover:bg-white/10 focus-visible:outline-2 focus-visible:outline-teal disabled:cursor-default disabled:opacity-30"
+  return (
+    <>
+      <TransactionList items={items.slice(start, start + pageSize)} group={group} className="frieda-scroll min-h-0 flex-1 overflow-y-auto pr-3" />
+      <nav aria-label="Transaction pagination" className="mt-4 mr-3 flex flex-wrap items-center justify-between gap-3 border-t border-white/[0.08] pt-4">
+        <span className="text-xs text-subtle" aria-live="polite">{items.length ? `${start + 1}–${Math.min(start + pageSize, items.length)} of ${items.length}` : "0 transactions"}</span>
+        <div className="flex items-center gap-1">
+          <button type="button" aria-label="Previous transaction page" disabled={current === 1} onClick={() => setPage(current - 1)} className={button}><ChevronLeft className="size-4" /></button>
+          <span className="px-2 text-xs text-subtle">Page {current} of {pages}</span>
+          <button type="button" aria-label="Next transaction page" disabled={current === pages} onClick={() => setPage(current + 1)} className={button}><ChevronRight className="size-4" /></button>
+        </div>
+      </nav>
+    </>
   )
 }

@@ -61,7 +61,7 @@ export function QuickLinks({ items }: { items: { icon: LucideIcon; label: string
     <div className="@container">
       <div className="grid grid-cols-3 gap-x-2 gap-y-5 @[340px]:grid-cols-4">
         {items.map(({ icon: Icon, label, onClick }) => (
-          <button key={label} type="button" onClick={onClick} className="group flex flex-col items-center gap-2.5 text-[15px] text-[#c4c4c4] transition-colors hover:text-white">
+          <button key={label} type="button" onClick={onClick} className="group flex flex-col items-center gap-2.5 text-[13px] text-[#c4c4c4] transition-colors hover:text-white">
             <span className="grid size-[46px] place-items-center rounded-[12px] bg-teal-deep text-[#3ad6be] transition-[transform,background-color] group-hover:-translate-y-0.5 group-hover:bg-[#0b6d63]">
               <Icon className="size-[22px]" strokeWidth={1.7} />
             </span>

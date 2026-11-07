@@ -15,7 +15,7 @@ import { ProgressBar, ValueBars } from "@/registry/frieda/components/frieda/char
 import { ConfirmDialog, FriedaDialog, fieldClass } from "@/registry/frieda/components/frieda/dialogs"
 import { DateRangeButton, PageHeader, primaryAction, useRange, vary } from "@/registry/frieda/components/frieda/page-header"
 import { Money, Panel, Pill } from "@/registry/frieda/components/frieda/panel"
-import { TransactionList } from "@/registry/frieda/components/frieda/transactions"
+import { PaginatedTransactions } from "@/registry/frieda/components/frieda/transactions"
 
 function CardAction({
   icon: Icon,
@@ -198,8 +198,8 @@ export default function CardsPage() {
             </div>
           </Panel>
 
-          <Panel title="Recent transactions" className="lg:max-h-[488px]" bodyClassName="-mr-3">
-            <TransactionList items={transactions.slice(0, 12)} className="frieda-scroll min-h-0 flex-1 overflow-y-auto pr-3" />
+          <Panel title="Recent transactions" className="min-h-[400px] lg:h-full" bodyClassName="-mr-3">
+            <PaginatedTransactions items={transactions} pageSize={5} />
           </Panel>
         </div>
       </div>
